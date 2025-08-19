@@ -19,48 +19,48 @@ public class SimpleBankingApp {
 
     // Create new account
     private static void createAccount() {
-        System.out.print("🔑 Set password for new account: ");
+        System.out.print(" Set password for new account: ");
         String pwd = sc.next();
-        System.out.print("💵 Enter initial deposit: ");
+        System.out.print(" Enter initial deposit: ");
         int bal = sc.nextInt();
 
         Account newAcc = new Account(pwd, bal);
         accounts.add(newAcc);
-        System.out.println("✅ Account created successfully!");
-        System.out.println("👉 Your Account Number is: " + newAcc.accountNo);
+        System.out.println(" Account created successfully!");
+        System.out.println(" Your Account Number is: " + newAcc.accountNo);
     }
 
     // Deposit into account
     private static void deposit() {
-        System.out.print("🏦 Enter account number: ");
+        System.out.print(" Enter account number: ");
         String accNo = sc.next();
         Account acc = findAccount(accNo);
         if (acc != null) {
-            System.out.print("💵 Enter amount to deposit: ");
+            System.out.print(" Enter amount to deposit: ");
             int amount = sc.nextInt();
             acc.deposit(amount);
         } else {
-            System.out.println("❌ Account not found!");
+            System.out.println(" Account not found!");
         }
     }
 
     // Withdraw from account
     private static void withdraw() {
-        System.out.print("🏦 Enter account number: ");
+        System.out.print(" Enter account number: ");
         String accNo = sc.next();
         Account acc = findAccount(accNo);
         if (acc != null) {
-            System.out.print("🔑 Enter password: ");
+            System.out.print(" Enter password: ");
             String pwd = sc.next();
             if (acc.password.equals(pwd)) {
-                System.out.print("💸 Enter amount to withdraw: ");
+                System.out.print(" Enter amount to withdraw: ");
                 int amount = sc.nextInt();
                 acc.withdraw(amount);
             } else {
-                System.out.println("❌ Incorrect password!");
+                System.out.println(" Incorrect password!");
             }
         } else {
-            System.out.println("❌ Account not found!");
+            System.out.println(" Account not found!");
         }
     }
 
@@ -118,7 +118,7 @@ public class SimpleBankingApp {
             System.out.println("4. Transfer");
             System.out.println("5. Check Balance");
             System.out.println("6. Exit");
-            System.out.print("👉 Enter choice: ");
+            System.out.print("Enter choice: ");
             int choice = sc.nextInt();
 
             switch (choice) {
